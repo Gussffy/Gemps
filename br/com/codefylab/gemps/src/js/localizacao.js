@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    fetch('https://raw.githubusercontent.com/CodeFyLab/Gemps/refs/heads/master/br/com/codefylab/gemps/teste/GEMPS.geojson')
+    fetch('https://raw.githubusercontent.com/Gussffy/Gemps/refs/heads/master/br/com/codefylab/gemps/src/teste/GEMPS.geojson')
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar o GeoJSON");
