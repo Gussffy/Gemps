@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 pointToLayer: function (feature, latlng) {
                     return L.marker(latlng, {
                         icon: L.icon({
-                            iconUrl: 'img/Vector.svg' ,
+                            iconUrl: '../img/Vector.svg' ,
                             iconSize: [20, 30]
                         })
                     });

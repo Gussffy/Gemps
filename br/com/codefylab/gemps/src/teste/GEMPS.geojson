@@ -14,7 +14,6 @@
 { "type": "Feature", "properties": { "Name": "LABCAST" }, "geometry": { "type": "Point", "coordinates": [ -40.8330304, -14.8639689 ] } },
 { "type": "Feature", "properties": { "Name": "Laboratório De Práticas Cirúrgicas" }, "geometry": { "type": "Point", "coordinates": [ -40.8331209, -14.863768 ] } },
 { "type": "Feature", "properties": { "Name": "Laboratório de Simulações Realísticas" }, "geometry": { "type": "Point", "coordinates": [ -40.8330731, -14.8638816 ] } },
-{ "type": "Feature", "properties": { "Name": "Sala atendimento 02" }, "geometry": { "type": "Point", "coordinates": [ -14.864160, -40.833230] } },
 { "type": "Feature", "properties": { "Name": "Sala de Antedimento 02" }, "geometry": { "type": "Point", "coordinates": [ -40.8332748, -14.86414 ] } },
 { "type": "Feature", "properties": { "Name": "Tutorial 06" }, "geometry": { "type": "Point", "coordinates": [ -40.8332555, -14.8641073 ] } },
 { "type": "Feature", "properties": { "Name": "Tutorial 05" }, "geometry": { "type": "Point", "coordinates": [ -40.8332846, -14.8641235 ] } },

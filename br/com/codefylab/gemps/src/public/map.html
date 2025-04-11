@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GemPS</title>
+
+    <!-- Biblioteca Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+
+    <!-- Leaflet Routing -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+
+    <!-- Map Tiler API -->
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet" />
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v4.0.2/leaflet-maptilersdk.umd.min.js"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="../css/styles.css" />
+
+</head>
+<body>
+<!-- Barra superior -->
+<header>
+    <div class="logo">
+        <img src="../img/Logotipo.png" alt="Logo GemPS">
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar...">
+    </div>
+</header>
+
+<!-- Mapa -->
+<div id="mapid"></div>
+
+<!-- Script do mapa -->
+<script src="../js/localizacao.js"></script>
+<!-- Script main.js -->
+<script src="../js/main.js"></script>
+</body>
+</html>

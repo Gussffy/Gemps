@@ -6,3 +6,5 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
+
+

@@ -4,9 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a512cc4-c415-422e-b11d-b110b5de67da" name="Changes" comment="Rota test">
+    <list default="true" id="7a512cc4-c415-422e-b11d-b110b5de67da" name="Changes" comment="TesteCords">
+      <change afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/public/map.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/teste/localizacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/teste/localizacao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/img/Logotipo.png" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/img/Logotipo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/img/Vector.svg" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/img/Vector.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/img/aula.png" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/img/aula.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/img/caneta.png" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/img/caneta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/img/laboratorio.png" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/img/laboratorio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/style/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/teste/GEMPS.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/teste/GEMPS.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/teste/Rota.geojson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/teste/Rotas.geojson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/teste/UNEX.geojson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/com/codefylab/gemps/teste/localizacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/br/com/codefylab/gemps/src/teste/localizacao.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -71,9 +85,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gsf34\WebstormProjects\Gemps\br\com\codefylab\gemps" />
+      <recent name="C:\Users\gsf34\WebstormProjects\Gemps\br\com\codefylab\src" />
       <recent name="C:\Users\gsf34\WebstormProjects\Gemps\br\com\codefylab\gemps\img" />
       <recent name="C:\Users\gsf34\WebstormProjects\Gemps\br\com\codefylab\gemps\style" />
-      <recent name="C:\Users\gsf34\WebstormProjects\Gemps\br\com\codefylab\gemps" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -113,7 +128,11 @@
       <workItem from="1743090611432" duration="78000" />
       <workItem from="1743118015809" duration="1651000" />
       <workItem from="1743433307781" duration="2109000" />
-      <workItem from="1743904984287" duration="8216000" />
+      <workItem from="1743904984287" duration="8517000" />
+      <workItem from="1744159182161" duration="239000" />
+      <workItem from="1744159578305" duration="672000" />
+      <workItem from="1744240227025" duration="3091000" />
+      <workItem from="1744325364962" duration="3907000" />
     </task>
     <task id="LOCAL-00001" summary="Criação GemPS">
       <option name="closed" value="true" />
@@ -219,7 +238,39 @@
       <option name="project" value="LOCAL" />
       <updated>1743912987828</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Rota test">
+      <option name="closed" value="true" />
+      <created>1743914272893</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1743914272893</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Amend Commit">
+      <option name="closed" value="true" />
+      <created>1743914358443</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1743914358443</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Organizado">
+      <option name="closed" value="true" />
+      <created>1743914468261</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1743914468261</updated>
+    </task>
+    <task id="LOCAL-00017" summary="TesteCords">
+      <option name="closed" value="true" />
+      <created>1744160002284</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744160002284</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +311,9 @@
     <MESSAGE value="Commit" />
     <MESSAGE value="Rotas Test" />
     <MESSAGE value="Rota test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rota test" />
+    <MESSAGE value="Amend Commit" />
+    <MESSAGE value="Organizado" />
+    <MESSAGE value="TesteCords" />
+    <option name="LAST_COMMIT_MESSAGE" value="TesteCords" />
   </component>
 </project>

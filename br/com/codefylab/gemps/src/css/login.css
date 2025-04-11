@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #f5f5f5; /* Cor de fundo temporária */
+}
+
+.login-icon {
+    width: 30vh; /* Tamanho do ícone */
+    height: auto; /* Mantém proporção da imagem */
+    position: absolute;
+    top: 5vh; /* Posiciona o ícone a 5% do topo da tela */
+    left: 50%;
+    transform: translateX(-50%); /* Centralização precisa */
+    z-index: 10; /* Garante que fique acima de tudo */
+}
+
+#telalogin {
+    background-color: #ffd000;
+    width: 100%; /* Ocupa toda a largura */
+    min-height: 80vh; /* Ocupa 80% da altura da tela */
+    margin-top: 15vh; /* Espaço para o ícone */
+    border-top-left-radius: 50% 30%;
+    border-top-right-radius: 50% 30%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-top: 70px; /* Espaço para o ícone */
+    display: flex; /* Flexbox para centralizar o conteúdo */
+    flex-direction: column; /* Alinhamento vertical */
+    align-items: center; /* Centraliza horizontalmente */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.form-container {
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 400px; /* Largura máxima */
+    display: flex; /* Flexbox para alinhar os elementos */
+    flex-direction: column; /* Alinhamento vertical */
+    align-items: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaço entre os elementos */
+    margin-top: 40px; /* Espaço após o ícone */
+}
+
+input {
+    width: 80%; /* Ocupa 80% da largura */
+    height: 50px; /* Altura do campo */
+    padding: 0 15px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: none; /* Remove a borda padrão */
+    border-radius: 20px; /* Borda arredondada */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Sombra suave */
+}
+
+#botao-login {
+    width: 50%; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    background-color: #ff9f0f; /* Cor de fundo */
+    border: none; /* Remove a borda */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Sombra suave */
+    border-radius: 10px; /* Borda arredondada */
+    font-family: Arial, bold, sans-serif; /* Fonte do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    position: relative; /* Posição relativa */
+    transition: 0.1s; /* Animação suave */
+
+}
+button.botao-login:hover {
+    background-color: #ff9f0f86; /* Cor de fundo ao passar por cima */
+}
+button.botao-login:active {
+    background-color: #ff9f0f11;
+    top: 6px; /* Desce 6 pixels ao clicar */
+    box-shadow: 0 0 5px rgba(0,0,0,0.5); /* Sombra mais suave */
+}
+
+.cadastro-container {
+    display: flex; /* Flexbox para alinhar os elementos */
+    justify-content:center; /* Centraliza horizontalmente */
+    align-items: center;
+    flex-direction: column; /* Alinhamento vertical */
+    gap: 10px; /* Espaço entre os elementos */
+    margin-top: 10px; /* Espaço após o botão */
+    width: 80%; /* Ocupa 80% da largura */
+}
+.cadastro-container h5 {
+    margin: 0; /* Remove a margem padrão */
+}
+
+.botao-cadastro {
+    background: transparent; /* Cor de fundo transparente */
+    border: none;  /* Remove a borda */
+    font-size: medium;  /* Tamanho da fonte */
+    font-weight: bold;
+    text-decoration: underline; /* Sublinhado */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    padding:0%;
+}
+button.botao-cadastro:hover {
+    color: rgb(0, 110, 255) ; /* Cor de fundo ao passar por cima */
+}
+button.botao-cadastro:active {
+    color: rgba(0, 110, 255, 0.336);
+    top: 6px; /* Desce 6 pixels ao clicar */
+}
+
+footer {
+    height: 100px; /* Altura do rodapé */
+    width: 100%; /* Ocupa toda a largura */
+    background-color: #ffd000; /* Cor de fundo */
+}
