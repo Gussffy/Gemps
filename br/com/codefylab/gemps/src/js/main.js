@@ -20,10 +20,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Configura o roteamento (opcional)
         setupRouting(map);
 
-        // Outras inicializações podem ser adicionadas aqui
 
     } catch (error) {
         console.error('Erro na inicialização do aplicativo:', error);
         // Você pode adicionar tratamento de erro visual aqui
     }
+});
+document.getElementById("botao-login").addEventListener("click", function() {
+    window.location.href = "src/public/map.html"; // Redireciona para a página do mapa
 });
