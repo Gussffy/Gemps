@@ -9,7 +9,6 @@ body, html {
     font-family: 'Arial', sans-serif;
 }
 
-/* Barra de pesquisa - estilo Google Maps */
 header .search-bar {
     position: absolute;
     left: 50%;
@@ -34,12 +33,11 @@ header .search-bar input:focus {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Ajuste no header para que não interfira com a barra de pesquisa */
 header {
     background-color: transparent;
     box-shadow: none;
     padding: 10px 20px;
-    justify-content: flex-start; /* Alinha itens à esquerda */
+    justify-content: flex-start;
 }
 
 header .logo {
@@ -49,7 +47,7 @@ header .logo {
     z-index: 1002;
 }
 header .logo img {
-    height: 80px; /* Ajuste conforme necessário */
+    height: 80px;
 }
 
 #mapid {
