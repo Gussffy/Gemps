@@ -306,86 +306,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Corredor Principal",
-        "type": "route"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -40.8333019,
-            -14.8638218
-          ],
-          [
-            -40.8332912,
-            -14.8638429
-          ],
-          [
-            -40.8332309,
-            -14.8639523
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Corredor dos Tutoriais",
-        "type": "route"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -40.8332555,
-            -14.8641073
-          ],
-          [
-            -40.8332846,
-            -14.8641235
-          ],
-          [
-            -40.8333347,
-            -14.8641401
-          ],
-          [
-            -40.8333655,
-            -14.8641508
-          ],
-          [
-            -40.8333838,
-            -14.8641631
-          ],
-          [
-            -40.8334019,
-            -14.8641707
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Conexão LABTEC-LABCAST",
-        "type": "route"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -40.8330035,
-            -14.8640124
-          ],
-          [
-            -40.8330304,
-            -14.8639689
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Acesso Banheiro",
         "type": "route",
         "stroke": "#555555",
@@ -403,31 +323,10 @@
             -40.8330444,
             -14.8641493
           ],
-          [
-            -40.833,
-            -14.864
-          ]
         ]
       },
       "id": 26
     },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Conexão Cirúrgico-Simulações",
-        "type": "route"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -40.8331209,
-            -14.863768
-          ],
-          [
-            -40.8330731,
-            -14.8638816
-          ]
         ]
       }
     }
