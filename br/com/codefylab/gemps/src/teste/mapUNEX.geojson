@@ -303,28 +303,13 @@
     },
     {
       "type": "Feature",
-      "properties": {
-        "name": "Acesso Banheiro",
-        "type": "route",
-        "stroke": "#555555",
-        "stroke-width": 3.9,
-        "stroke-opacity": 1
-      },
+      "properties": { "type": "path" },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [
-           -40.833655,
-           -14.863899
-          ],
-          [
-            -40.8331192,
-            -14.8641452
-          ],
-          [
-            -40.8330444,
-            -14.8641493
-          ]
+          [-40.8333019, -14.8638218], // Ponto A
+          [-40.8332309, -14.8639523], // Ponto B
+          [-40.8331904, -14.8640403]  // Ponto C
         ]
       }
     }
