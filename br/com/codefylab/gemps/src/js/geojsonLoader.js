@@ -1,15 +1,37 @@
-// geojsonLoader.js
 export async function loadGeoJSON(map) {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/Gussffy/Gemps/refs/heads/master/br/com/codefylab/gemps/src/teste/GEMPS.geojson');
+        console.log('Iniciando carregamento do GeoJSON...');
+
+        const geoJSONUrl = 'https://raw.githubusercontent.com/Gussffy/Gemps/refs/heads/gussffy-branch/br/com/codefylab/gemps/src/teste/GEMPS.geojson';
+        console.log('URL do GeoJSON:', geoJSONUrl);
+
+        const response = await fetch(geoJSONUrl);
+        console.log('Resposta da requisição:', response);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
+        console.log('Dados do GeoJSON carregados:', data);
 
         const datalist = document.getElementById('salasList');
-        const nomesUnicos = new Set();
-        const features = {};
+        if (!datalist) {
+            throw new Error('Elemento datalist não encontrado');
+        }
 
-        L.geoJSON(data, {
+        const nomesUnicos = new Set();
+        const markers = {};
+
+        const geoJSONLayer = L.geoJSON(data, {
             pointToLayer: (feature, latlng) => {
+                console.log('Processando ponto:', feature);
+
+                if (!feature.properties || !feature.properties.Name) {
+                    console.warn('Feature sem propriedade Name:', feature);
+                    return L.marker(latlng);
+                }
+
                 const nomeOriginal = feature.properties.Name.trim();
                 const nomeNormalizado = nomeOriginal.toLowerCase();
 
@@ -21,23 +43,30 @@ export async function loadGeoJSON(map) {
                     datalist.appendChild(option);
                 }
 
-                // Cria e armazena o marcador
+                // Cria o marcador
                 const marker = L.marker(latlng, {
                     icon: L.icon({
                         iconUrl: '../img/Vector.svg',
-                        iconSize: [20, 30]
+                        iconSize: [25, 41],
+                        iconAnchor: [12, 41]
                     })
                 });
-                features[nomeNormalizado] = marker;
+
+                markers[nomeNormalizado] = marker;
 
                 return marker;
             },
             onEachFeature: (feature, layer) => {
-                layer.bindPopup(feature.properties.Name.trim());
+                if (feature.properties && feature.properties.Name) {
+                    layer.bindPopup(feature.properties.Name.trim());
+                }
             }
-        }).addTo(map);
+        });
 
-        return features;
+        geoJSONLayer.addTo(map);
+        console.log('GeoJSON adicionado ao mapa com sucesso!');
+
+        return markers;
     } catch (error) {
         console.error('Erro ao carregar GeoJSON:', error);
         throw error;

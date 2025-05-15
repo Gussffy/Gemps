@@ -56,7 +56,7 @@ input {
     box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Sombra suave */
 }
 
-#botao-login {
+#botao-entrar {
     width: 50%; /* Largura do botão */
     height: 50px; /* Altura do botão */
     background-color: #ff9f0f; /* Cor de fundo */
@@ -71,10 +71,10 @@ input {
     transition: 0.1s; /* Animação suave */
 
 }
-button.botao-login:hover {
+button.botao-entrar:hover {
     background-color: #ff9f0f86; /* Cor de fundo ao passar por cima */
 }
-button.botao-login:active {
+button.botao-entrar:active {
     background-color: #ff9f0f11;
     top: 6px; /* Desce 6 pixels ao clicar */
     box-shadow: 0 0 5px rgba(0,0,0,0.5); /* Sombra mais suave */
