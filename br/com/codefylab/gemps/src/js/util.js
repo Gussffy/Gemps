@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM pronto!'); // Verifique se isso aparece no console
 
-    // Botão de login
+    // Botão de logiin
     document.querySelectorAll('.botao-login').forEach(btn => {
         btn.addEventListener('click', () => {
             window.location.href = '../../index.html';
