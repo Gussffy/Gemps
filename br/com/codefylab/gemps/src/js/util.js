@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Botão de login
+    // Botão de logiin
     document.querySelectorAll('.botao-login').forEach(btn => {
         btn.addEventListener('click', () => {
             window.location.href = '../../index.html';
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Botão de cadastro
     document.querySelectorAll('.botao-cadastro').forEach(btn => {
         btn.addEventListener('click', () => {
-            window.location.href = '/br/com/codefylab/gemps/src/public/cadastro.html';
+            window.location.href = '../public/cadastro.html';
         });
     });
 
