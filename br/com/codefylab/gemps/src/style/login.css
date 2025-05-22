@@ -22,18 +22,16 @@ body {
 
 #telalogin {
     background-color: #ffd000;
-    width: 100%; /* Ocupa toda a largura */
-    min-height: 80vh; /* Ocupa 80% da altura da tela */
-    margin-top: 15vh; /* Espaço para o ícone */
+    width: 100%;
+    min-height: 80vh;
+    margin-top: 15vh;
     border-top-left-radius: 50% 30%;
     border-top-right-radius: 50% 30%;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    padding-top: 70px; /* Espaço para o ícone */
-    display: flex; /* Flexbox para centralizar o conteúdo */
-    flex-direction: column; /* Alinhamento vertical */
-    align-items: center; /* Centraliza horizontalmente */
-    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .form-container {
@@ -57,29 +55,27 @@ input {
 }
 
 #botao-entrar {
-    width: 50%; /* Largura do botão */
-    height: 50px; /* Altura do botão */
-    background-color: #ff9f0f; /* Cor de fundo */
-    border: none; /* Remove a borda */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Sombra suave */
-    border-radius: 10px; /* Borda arredondada */
-    font-family: Arial, bold, sans-serif; /* Fonte do texto */
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Negrito */
-    cursor: pointer; /* Muda o cursor ao passar por cima */
-    position: relative; /* Posição relativa */
-    transition: 0.1s; /* Animação suave */
-
+    width: 50%;
+    height: 50px;
+    background-color: #ff9f0f;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.1s;
+    margin-top: 10px;
 }
-button.botao-entrar:hover {
-    background-color: #ff9f0f86; /* Cor de fundo ao passar por cima */
+#botao-entrar:hover {
+    background-color: #ff9f0f86;
 }
-button.botao-entrar:active {
+#botao-entrar:active {
     background-color: #ff9f0f11;
-    top: 6px; /* Desce 6 pixels ao clicar */
-    box-shadow: 0 0 5px rgba(0,0,0,0.5); /* Sombra mais suave */
+    transform: translateY(6px);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-
 .cadastro-container {
     display: flex; /* Flexbox para alinhar os elementos */
     justify-content:center; /* Centraliza horizontalmente */

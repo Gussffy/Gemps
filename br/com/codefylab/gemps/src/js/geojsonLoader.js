@@ -46,7 +46,7 @@ export async function loadGeoJSON(map) {
                 // Cria o marcador
                 const marker = L.marker(latlng, {
                     icon: L.icon({
-                        iconUrl: '../img/Vector.svg',
+                        iconUrl: "../../../gemps/src/img/point.svg",
                         iconSize: [25, 41],
                         iconAnchor: [12, 41]
                     })
