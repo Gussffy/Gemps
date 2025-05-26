@@ -7,7 +7,7 @@ export function initMap() {
         zoom: 18,
         maxZoom: 22,
         minZoom: 18,
-        dragging: true,
+        dragging: false,
         zoomControl: true,
         scrollWheelZoom: true,
         doubleClickZoom: true,
