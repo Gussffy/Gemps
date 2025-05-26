@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GemPS</title>
+  <link rel="stylesheet" href="br/com/codefylab/gemps/src/style/login.css">
+</head>
+<body>
+<img src="br/com/codefylab/gemps/src/img/Logotipo.png" alt="logo GemPS" class="login-icon">
+
+<div id="telalogin">
+  <div class="form-container">
+    <h1>Login</h1>
+    <input type="text" placeholder="E-mail">
+    <input type="password" placeholder="Senha">
+    <button type=button id="botao-entrar">Entrar</button>
+    <div class="cadastro-container">
+      <h5>Nao possui uma conta?</h5>
+      <button class="botao-cadastro">Cadastrar</button>
+    </div>
+  </div>
+</div>
+<footer aria-hidden="true"></footer>
+<script>
+  document.querySelectorAll('.botao-cadastro').forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.location.href = 'br/com/codefylab/gemps/src/public/cadastro.html';
+    });
+  });
+
+
+ const btnMapa = document.getElementById('botao-entrar');
+  if(btnMapa) {
+    btnMapa.addEventListener('click', () => {
+      window.location.href = 'br/com/codefylab/gemps/src/public/map.html';
+    });
+  }
+</script>
+</body>
+</html>
