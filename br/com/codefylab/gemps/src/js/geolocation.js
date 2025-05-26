@@ -2,8 +2,8 @@
 export function setupGeolocation(map) {
     let marker = null;
     let watchId = null;
-    let orientationHandler = null; // Armazenar referência do handler
 
+    // Ícone simples sem rotação
     const compassIcon = L.divIcon({
         className: 'compass-marker',
         html: '<div class="arrow">' +
@@ -19,19 +19,14 @@ export function setupGeolocation(map) {
             pos => {
                 const coords = [pos.coords.latitude, pos.coords.longitude];
 
+                // Atualiza ou cria o marcador
                 if (!marker) {
-                    marker = L.marker(coords, {
-                        icon: compassIcon,
-                        rotationOrigin: 'center'
-                    }).addTo(map);
+                    marker = L.marker(coords, { icon: locationIcon }).addTo(map);
                 } else {
-                    marker.setLatLng(coords);
+                    marker.setLatLng(coords); // Apenas move o marcador
                 }
 
-                map.panTo(coords, {
-                    animate: true,
-                    duration: 0.5
-                });
+                // Removemos o panTo/center do código original!
             },
             err => console.error(`Erro de geolocalização: ${err.message}`),
             {
@@ -42,21 +37,9 @@ export function setupGeolocation(map) {
         );
     }
 
-    if (window.DeviceOrientationEvent) {
-        orientationHandler = event => {
-            if (marker && event.alpha !== null) {
-                marker.setRotationAngle(event.alpha);
-            }
-        };
-
-        window.addEventListener('deviceorientation', orientationHandler);
-    }
-
+    // Limpeza
     return () => {
         if (watchId) navigator.geolocation.clearWatch(watchId);
-        if (orientationHandler) {
-            window.removeEventListener('deviceorientation', orientationHandler);
-        }
         if (marker) map.removeLayer(marker);
     };
 }
