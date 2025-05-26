@@ -58,4 +58,11 @@ header .logo img {
     height: 100%;
     z-index: 0;
 }
+.compass-marker {
+    transition: transform 0.3s ease-out; /* Suaviza a rotação */
+}
+
+.compass-marker .arrow {
+    display: inline-block; /* Permite que a rotação funcione corretamente */
+}
 
