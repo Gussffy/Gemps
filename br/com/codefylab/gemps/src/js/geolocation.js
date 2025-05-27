@@ -26,7 +26,6 @@ export function setupGeolocation(map) {
                     marker.setLatLng(coords); // Apenas move o marcador
                 }
 
-                // Removemos o panTo/center do código original!
             },
             err => console.error(`Erro de geolocalização: ${err.message}`),
             {

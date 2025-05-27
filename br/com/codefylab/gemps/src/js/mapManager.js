@@ -7,21 +7,26 @@ export function initMap() {
         zoom: 18,
         maxZoom: 22,
         minZoom: 18,
-        dragging: false,
+        dragging: true,
         zoomControl: true,
         scrollWheelZoom: true,
         doubleClickZoom: true,
         touchZoom: true,
+
     });
+    // Define os limites máximos do mapa
+    map.setMaxBounds([
+        [-14.861878, -40.832191], // sudoeste (latitude mínima, longitude mínima)
+        [-14.865630, -40.835774]  // nordeste (latitude máxima, longitude máxima)
+    ]);
 
     // Camada do MapTiler
     const key = 'xfjEnIcQ0ERJBgeBHhBc';
-    const mtLayer = L.maptiler.maptilerLayer({
+    L.maptiler.maptilerLayer({
         apiKey: key,
-        style: L.maptiler.MapStyle.STREETS,
+        style: L.maptiler.MapStyle.PASTEL,
     }).addTo(map);
-
-    // Evento de clique para coordenadas
+// Evento de clique para coordenadas
     map.on('click', function (e) {
         L.popup()
             .setLatLng(e.latlng)
