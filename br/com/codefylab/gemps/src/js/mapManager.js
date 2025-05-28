@@ -1,4 +1,5 @@
 // mapManager.js
+
 export function initMap() {
     const faculdadeCoords = [-14.864416, -40.834072];
 
@@ -14,11 +15,7 @@ export function initMap() {
         touchZoom: true,
 
     });
-    // Define os limites máximos do mapa
-    map.setMaxBounds([
-        [-14.861878, -40.832191], // sudoeste (latitude mínima, longitude mínima)
-        [-14.865630, -40.835774]  // nordeste (latitude máxima, longitude máxima)
-    ]);
+
 
     // Camada do MapTiler
     const key = 'xfjEnIcQ0ERJBgeBHhBc';

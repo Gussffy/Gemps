@@ -66,3 +66,9 @@ header .logo img {
     display: inline-block; /* Permite que a rotação funcione corretamente */
 }
 
+/* Estilo para o círculo de precisão */
+.leaflet-interactive.leaflet-circle {
+    pointer-events: none; /* Permite cliques através do círculo */
+    stroke-dasharray: 4, 4; /* Linha tracejada */
+}
+
