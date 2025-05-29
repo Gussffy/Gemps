@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -7,18 +8,30 @@
 body, html {
     height: 100%;
     font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
 
-header .search-bar {
+header {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 10px 20px;
+    z-index: 1000;
+    height: 80px;
+}
+
+.search-bar {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 20px;
     width: 400px;
+    max-width: 80%;
     z-index: 1001;
+    transition: all 0.3s ease;
 }
 
-header .search-bar input {
+.search-bar input {
     width: 100%;
     padding: 12px 20px;
     border: none;
@@ -29,25 +42,20 @@ header .search-bar input {
     transition: all 0.3s ease;
 }
 
-header .search-bar input:focus {
+.search-bar input:focus {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
 
-header {
-    background-color: transparent;
-    box-shadow: none;
-    padding: 10px 20px;
-    justify-content: flex-start;
-}
-
-header .logo {
+.logo {
     position: absolute;
     right: 20px;
     top: 20px;
     z-index: 1002;
 }
-header .logo img {
+
+.logo img {
     height: 80px;
+    transition: all 0.3s ease;
 }
 
 #mapid {
@@ -58,22 +66,23 @@ header .logo img {
     height: 100%;
     z-index: 0;
 }
+
 .compass-marker {
-    transition: transform 0.3s ease-out; /* Suaviza a rotação */
+    transition: transform 0.3s ease-out;
 }
 
 .compass-marker .arrow {
-    display: inline-block; /* Permite que a rotação funcione corretamente */
+    display: inline-block;
 }
 
-/* Estilo para o círculo de precisão */
 .leaflet-interactive.leaflet-circle {
-    pointer-events: none; /* Permite cliques através do círculo */
-    stroke-dasharray: 4, 4; /* Linha tracejada */
+    pointer-events: none;
+    stroke-dasharray: 4, 4;
 }
+
 .geolocation-control {
     position: absolute;
-    top: 10px;
+    top: 90px;
     right: 10px;
     z-index: 1000;
     background: white;
@@ -89,4 +98,99 @@ header .logo img {
     cursor: pointer;
     width: 30px;
     height: 30px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 320px;
+        top: 15px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .geolocation-control {
+        top: 85px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 70px;
+    }
+
+    .search-bar {
+        width: 280px;
+        top: 10px;
+    }
+
+    .search-bar input {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .logo {
+        right: 10px;
+        top: 15px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .geolocation-control {
+        top: 70px;
+        right: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .search-bar {
+        width: 230px;
+    }
+
+    .logo {
+        right: 5px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+}
+
+/* Menu Mobile */
+.mobile-menu-btn {
+    display: none;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    z-index: 1003;
+    background: white;
+    border: none;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Indicador de tamanho da tela (para demonstração) */
+.screen-size-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1000;
 }
