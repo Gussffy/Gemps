@@ -71,4 +71,22 @@ header .logo img {
     pointer-events: none; /* Permite cliques através do círculo */
     stroke-dasharray: 4, 4; /* Linha tracejada */
 }
+.geolocation-control {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: white;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
 
+.geolocation-control button {
+    border: none;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
