@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,7 +10,6 @@ body, html {
     overflow: hidden;
 }
 
-/* Layout do cabeçalho */
 header {
     position: relative;
     background-color: transparent;
@@ -18,23 +17,17 @@ header {
     padding: 10px 20px;
     z-index: 1000;
     height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Container da barra de busca */
-.search-container {
-    position: relative;
-    flex-grow: 1;
-    max-width: 500px;
-    margin: 0 auto;
-    z-index: 1001;
 }
 
 .search-bar {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    width: 400px;
+    max-width: 80%;
+    z-index: 1001;
+    transition: all 0.3s ease;
 }
 
 .search-bar input {
@@ -52,47 +45,18 @@ header {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Elemento de feedback */
-#searchFeedback {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 8px 12px;
-    border-radius: 0 0 25px 25px;
-    font-size: 14px;
-    text-align: center;
-    z-index: 999;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-    transform: translateY(-10px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-#searchFeedback.feedback-error {
-    background-color: #ffebee;
-    color: #c62828;
-    border: 1px solid #ffcdd2;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Logo */
 .logo {
+    position: absolute;
+    right: 20px;
+    top: 20px;
     z-index: 1002;
-    margin-left: 20px;
 }
 
 .logo img {
-    height: 50px;
+    height: 80px;
     transition: all 0.3s ease;
 }
 
-/* Mapa */
 #mapid {
     position: absolute;
     top: 0;
@@ -102,7 +66,15 @@ header {
     z-index: 0;
 }
 
-/* Controle de geolocalização */
+.compass-marker {
+    transition: transform 0.3s ease-out;
+}
+
+.compass-marker .arrow {
+    display: inline-block;
+}
+
+
 .geolocation-control {
     position: absolute;
     top: 90px;
@@ -125,22 +97,28 @@ header {
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
-    header {
-        padding: 10px 15px;
-        height: 70px;
-    }
-
-    .search-container {
-        max-width: 65%;
-        margin: 0 10px;
-    }
-
-    .logo {
-        margin-left: 10px;
+    .search-bar {
+        width: 320px;
+        top: 15px;
     }
 
     .logo img {
-        height: 40px;
+        height: 60px;
+    }
+
+    .geolocation-control {
+        top: 85px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 70px;
+    }
+
+    .search-bar {
+        width: 280px;
+        top: 10px;
     }
 
     .search-bar input {
@@ -148,32 +126,13 @@ header {
         font-size: 14px;
     }
 
-    .geolocation-control {
-        top: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        height: 60px;
-    }
-
-    .search-container {
-        max-width: 60%;
+    .logo {
+        right: 10px;
+        top: 15px;
     }
 
     .logo img {
-        height: 35px;
-    }
-
-    .search-bar input {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
-
-    #searchFeedback {
-        font-size: 12px;
-        padding: 6px 8px;
+        height: 40px;
     }
 
     .geolocation-control {
@@ -183,16 +142,16 @@ header {
 }
 
 @media (max-width: 360px) {
-    .search-container {
-        max-width: 55%;
+    .search-bar {
+        width: 230px;
     }
 
     .logo {
-        margin-left: 5px;
+        right: 5px;
     }
 
     .logo img {
-        height: 30px;
+        height: 35px;
     }
 }
 
@@ -217,4 +176,44 @@ header {
     .mobile-menu-btn {
         display: block;
     }
+}
+
+.screen-size-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+#searchFeedback {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 25px;
+    font-size: 14px;
+    text-align: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.feedback-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+}
+
+.feedback-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
