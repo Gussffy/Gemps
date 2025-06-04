@@ -1,28 +1,26 @@
-// js/app.js
-import { initMap } from './mapManager.js';
-import { loadGeoJSON } from './geojsonLoader.js';
-import { setupSearch } from './searchHandler.js';
-import { setupGeolocation } from './geolocation.js'; // Importe o módulo de geolocalização
+import { initMap } from './modules/mapManager.js';
+import { loadGeoJSON } from './modules/geojsonLoader.js';
+import { setupSearch } from './modules/searchHandler.js';
+import { setupGeolocation } from './modules/geolocation.js';
 
 const FACULDADE_COORDS = [-14.864416, -40.834072];
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // Inicialização do mapa
         const map = initMap('mapid', FACULDADE_COORDS);
-
-        // Configura a geolocalização - retorna uma função de limpeza
         const cleanupGeolocation = setupGeolocation(map);
-
-        // Carrega dados GeoJSON
         const features = await loadGeoJSON(map);
-
-        // Configura busca
         setupSearch(features, map);
 
-        // Limpeza quando a página for fechada
         window.addEventListener('beforeunload', () => {
             cleanupGeolocation();
+        });
+
+        // Atalho de teclado para rotação (Shift + R)
+        document.addEventListener('keydown', (e) => {
+            if (e.shiftKey && e.key === 'R') {
+                map.setRotation(0);
+            }
         });
 
     } catch (error) {

@@ -10,14 +10,8 @@
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossorigin=""/>
 
-    <!-- Leaflet Routing CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
-
     <!-- Map Tiler CSS -->
     <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet" />
-
-    <!-- Adicione isso no <head> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.rotate@1.0.0/dist/leaflet.rotate.min.css">
 
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="../style/styles.css" />
@@ -29,27 +23,21 @@
         <img src="../img/Logotipo.png" alt="Logo GemPS">
     </div>
     <div class="search-bar">
-        <input type="text" id="searchInput" list="salasList" placeholder="Buscar sala...">
+        <input type="text" id="searchInput" placeholder="Buscar sala...">
         <datalist id="salasList"></datalist>
+        <div id="searchFeedback" class="feedback-hidden"></div>
     </div>
 </header>
 <!-- Mapa -->
 <div id="mapid"></div>
 <!-- No seu map.html -->
 
-<!-- Scripts com defer para carregar após o HTML -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin="" defer></script>
 
-<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js" defer></script>
-
 <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js" defer></script>
 <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v4.0.2/leaflet-maptilersdk.umd.min.js" defer></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-
-<script src="https://cdn.jsdelivr.net/npm/leaflet.rotate@1.0.0/dist/leaflet.rotate.min.js"></script>
 
 <!-- Módulo principal como type="module" -->
 <script src="../js/main.js" type="module" defer></script>

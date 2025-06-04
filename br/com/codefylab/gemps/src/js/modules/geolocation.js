@@ -73,7 +73,7 @@ export function setupGeolocation(map) {
 
                 // Atualiza o círculo de precisão
                 const mapWidthMeters = map.getBounds().getEast() - map.getBounds().getWest();
-                const maxRadius = Math.min(accuracy, Math.max(10, mapWidthMeters * 0.05));
+                const maxRadius = Math.min(accuracy, Math.max(10, mapWidthMeters * 0.005));
 
                 if (!accuracyCircle) {
                     accuracyCircle = L.circle(coords, {

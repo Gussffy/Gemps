@@ -1,6 +1,4 @@
-// searchHandler.js
 export function setupSearch(features, map) {
-    // Normaliza os nomes das salas para busca case-insensitive
     const normalizedFeatures = Object.entries(features).reduce((acc, [key, value]) => {
         acc[key.toLowerCase()] = value;
         return acc;
@@ -10,12 +8,13 @@ export function setupSearch(features, map) {
         const input = document.getElementById('searchInput').value.trim().toLowerCase();
         const feedbackElement = document.getElementById('searchFeedback');
 
-        // Reset feedback
-        if (feedbackElement) feedbackElement.textContent = '';
+        // Reset do feedback
+        feedbackElement.textContent = '';
+        feedbackElement.className = 'feedback-hidden';
 
         if (!input) return;
 
-        // 1. Busca exata tem prioridade
+        // 1. Busca exata
         if (normalizedFeatures[input]) {
             const marker = normalizedFeatures[input];
             map.flyTo(marker.getLatLng(), 20);
@@ -29,25 +28,32 @@ export function setupSearch(features, map) {
             .map(key => normalizedFeatures[key]);
 
         if (matches.length > 0) {
-            // Vai para o primeiro resultado e mostra os demais no console
             const firstMatch = matches[0];
             map.flyTo(firstMatch.getLatLng(), 20);
             firstMatch.openPopup();
-
-            // Log de resultados múltiplos
-            if (matches.length > 1) {
-                console.log(`${matches.length} salas encontradas. Primeira exibida:`);
-                console.table(matches.map(m => m.feature.properties.name));
-            }
         } else {
+            // Exibir feedback visual na página
+            feedbackElement.textContent = 'Sala não encontrada!';
+            feedbackElement.className = 'feedback-error';
 
-            if (feedbackElement) {
-                feedbackElement.textContent = 'Sala não encontrada!';
-            } else {
-                console.log('Sala não encontrada!');
-            }
+            // Opcional: resetar após 3 segundos
+            setTimeout(() => {
+                feedbackElement.className = 'feedback-hidden';
+            }, 3000);
         }
     }
 
-    document.getElementById('searchInput').addEventListener('input', buscarSala);
+    const searchInput = document.getElementById('searchInput');
+
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            buscarSala();
+        }
+    });
+
+    // Se tiver um botão de pesquisa
+    const searchButton = document.getElementById('searchButton');
+    if (searchButton) {
+        searchButton.addEventListener('click', buscarSala);
+    }
 }

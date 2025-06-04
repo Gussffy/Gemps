@@ -2,7 +2,7 @@
     // Botão de logiin
     document.querySelectorAll('.botao-login').forEach(btn => {
         btn.addEventListener('click', () => {
-            window.location.href = '../../../../../../index.html';
+            window.location.href = '../../../../../../../index.html';
         });
     });
 
@@ -10,13 +10,13 @@
     const btnEntrar = document.getElementById('botao-cadastro');
     if(btnEntrar) {
         btnEntrar.addEventListener('click', () => {
-            window.location.href = 'public/cadastro.html';
+            window.location.href = '../../public/cadastro.html';
         });
     }
 
     const btnMapa = document.getElementById('botao-entrar');
     if(btnMapa) {
         btnMapa.addEventListener('click', () => {
-            window.location.href = '../public/map.html';
+            window.location.href = '../../public/map.html';
         });
     }

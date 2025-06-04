@@ -75,10 +75,6 @@ header {
     display: inline-block;
 }
 
-.leaflet-interactive.leaflet-circle {
-    pointer-events: none;
-    stroke-dasharray: 4, 4;
-}
 
 .geolocation-control {
     position: absolute;
@@ -183,7 +179,6 @@ header {
     }
 }
 
-/* Indicador de tamanho da tela (para demonstração) */
 .screen-size-indicator {
     position: absolute;
     bottom: 10px;
@@ -193,4 +188,41 @@ header {
     border-radius: 4px;
     font-size: 12px;
     z-index: 1000;
+}
+/* Adicione estas regras ao seu CSS existente */
+
+#searchFeedback {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 25px;
+    font-size: 14px;
+    text-align: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.feedback-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+}
+
+.feedback-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Ajuste para o container da barra de busca */
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Ajuste conforme necessário */
 }

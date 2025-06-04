@@ -6,8 +6,6 @@ export function initMap() {
     const map = L.map('mapid', {
         center: faculdadeCoords,
         zoom: 18,
-        maxZoom: 22,
-        minZoom: 18,
         dragging: true,
         zoomControl: true,
         scrollWheelZoom: true,
