@@ -18,7 +18,7 @@ export function initMap() {
     const key = 'xfjEnIcQ0ERJBgeBHhBc';
     L.maptiler.maptilerLayer({
         apiKey: key,
-        style: L.maptiler.MapStyle.PASTEL,
+        style: "https://api.maptiler.com/maps/dataviz/style.json?key=xfjEnIcQ0ERJBgeBHhBc",
     }).addTo(map);
 
     return map;
