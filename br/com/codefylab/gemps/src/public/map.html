@@ -23,9 +23,12 @@
         <img src="../img/Logotipo.png" alt="Logo GemPS">
     </div>
     <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Buscar sala...">
-        <datalist id="salasList"></datalist>
-        <div id="searchFeedback" class="feedback-hidden"></div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar sala..." autocomplete="off">
+            <div class="search-icon">🔍</div>
+            <div id="searchSuggestions" class="suggestions-container"></div>
+            <div id="searchFeedback"></div>
+        </div>
     </div>
 </header>
 <!-- Mapa -->
@@ -34,13 +37,13 @@
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="" defer></script>
+        crossorigin=""></script>
 
-<script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js" defer></script>
-<script src="https://cdn.maptiler.com/leaflet-maptilersdk/v4.0.2/leaflet-maptilersdk.umd.min.js" defer></script>
+<script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js" ></script>
+<script src="https://cdn.maptiler.com/leaflet-maptilersdk/v4.0.2/leaflet-maptilersdk.umd.min.js" ></script>
 
 <!-- Módulo principal como type="module" -->
-<script src="../js/main.js" type="module" defer></script>
+<script src="../js/main.js" type="module"></script>
 
 </body>
 </html>

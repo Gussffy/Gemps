@@ -14,20 +14,12 @@ export function initMap() {
 
     });
 
-
     // Camada do MapTiler
     const key = 'xfjEnIcQ0ERJBgeBHhBc';
     L.maptiler.maptilerLayer({
         apiKey: key,
         style: L.maptiler.MapStyle.PASTEL,
     }).addTo(map);
-// Evento de clique para coordenadas
-    map.on('click', function (e) {
-        L.popup()
-            .setLatLng(e.latlng)
-            .setContent(`Coordenadas: ${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}`)
-            .openOn(map);
-    });
 
     return map;
 }

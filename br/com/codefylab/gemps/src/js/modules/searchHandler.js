@@ -1,59 +1,107 @@
-export function setupSearch(features, map) {
-    const normalizedFeatures = Object.entries(features).reduce((acc, [key, value]) => {
+export function setupSearch(geoData, map) {
+    const { markers, salaNames } = geoData;
+    const searchInput = document.getElementById('searchInput');
+    const searchContainer = document.querySelector('.search-container');
+    const suggestionsContainer = document.getElementById('searchSuggestions');
+    const feedbackElement = document.getElementById('searchFeedback');
+
+    // Normaliza os nomes para busca case-insensitive
+    const normalizedFeatures = Object.entries(markers).reduce((acc, [key, value]) => {
         acc[key.toLowerCase()] = value;
         return acc;
     }, {});
 
+    // Mostrar sugestões no estilo Google
+    function showSuggestions(suggestions) {
+        suggestionsContainer.innerHTML = '';
+
+        if (suggestions.length === 0) {
+            searchContainer.classList.remove('has-suggestions');
+            suggestionsContainer.classList.remove('active');
+            return;
+        }
+
+        searchContainer.classList.add('has-suggestions');
+
+        suggestions.slice(0, 8).forEach(sala => {
+            const div = document.createElement('div');
+            div.className = 'suggestion-item';
+            div.innerHTML = `
+                <span class="suggestion-text">${sala}</span>
+            `;
+
+            div.addEventListener('click', () => {
+                searchInput.value = sala;
+                searchContainer.classList.remove('has-suggestions');
+                suggestionsContainer.classList.remove('active');
+                buscarSala();
+            });
+
+            suggestionsContainer.appendChild(div);
+        });
+
+        suggestionsContainer.classList.add('active');
+        feedbackElement.classList.remove('active');
+    }
+
+    // Função de busca
     function buscarSala() {
-        const input = document.getElementById('searchInput').value.trim().toLowerCase();
-        const feedbackElement = document.getElementById('searchFeedback');
+        const input = searchInput.value.trim().toLowerCase();
 
-        // Reset do feedback
+        // Resetar feedback
         feedbackElement.textContent = '';
-        feedbackElement.className = 'feedback-hidden';
+        feedbackElement.className = '';
+        feedbackElement.classList.remove('active');
 
-        if (!input) return;
+        if (!input) {
+            searchContainer.classList.remove('has-suggestions');
+            suggestionsContainer.classList.remove('active');
+            return;
+        }
 
         // 1. Busca exata
         if (normalizedFeatures[input]) {
             const marker = normalizedFeatures[input];
             map.flyTo(marker.getLatLng(), 20);
             marker.openPopup();
+            searchContainer.classList.remove('has-suggestions');
+            suggestionsContainer.classList.remove('active');
             return;
         }
 
-        // 2. Busca por substring
-        const matches = Object.keys(normalizedFeatures)
-            .filter(key => key.includes(input))
-            .map(key => normalizedFeatures[key]);
+        // 2. Busca por similaridade
+        const matches = salaNames.filter(name =>
+            name.toLowerCase().includes(input)
+        );
 
         if (matches.length > 0) {
-            const firstMatch = matches[0];
-            map.flyTo(firstMatch.getLatLng(), 20);
-            firstMatch.openPopup();
+            showSuggestions(matches);
         } else {
-            // Exibir feedback visual na página
-            feedbackElement.textContent = 'Sala não encontrada!';
-            feedbackElement.className = 'feedback-error';
-
-            // Opcional: resetar após 3 segundos
-            setTimeout(() => {
-                feedbackElement.className = 'feedback-hidden';
-            }, 3000);
+            feedbackElement.innerHTML = `
+                <div class="feedback-error">
+                    Sala não encontrada!
+                </div>
+            `;
+            feedbackElement.classList.add('active');
+            searchContainer.classList.add('has-suggestions');
+            suggestionsContainer.classList.remove('active');
         }
     }
 
-    const searchInput = document.getElementById('searchInput');
-
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
+    // Event listeners
+    searchInput.addEventListener('input', buscarSala);
+    searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim() !== '') {
             buscarSala();
         }
     });
 
-    // Se tiver um botão de pesquisa
-    const searchButton = document.getElementById('searchButton');
-    if (searchButton) {
-        searchButton.addEventListener('click', buscarSala);
-    }
+    // Fechar sugestões ao clicar fora
+    document.addEventListener('click', (e) => {
+        if (!searchContainer.contains(e.target)) {
+            searchContainer.classList.remove('has-suggestions');
+            suggestionsContainer.classList.remove('active');
+            feedbackElement.classList.remove('active');
+        }
+    });
 }
